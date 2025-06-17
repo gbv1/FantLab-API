@@ -153,14 +153,14 @@ offset - смещение от начала (не обязательный, по
 ## Создание книжной полки
 Запрос
 ```
-AUTH POST /my/bookcases/add?name={name}&type={work|edition|film}&shared={on|off}&comment={comment}
+AUTH POST /my/bookcases/add?name={name}&type={work|edition|film|autor}&shared={on|off}&comment={comment}
 ```
 *Требует авторизации (передачи аутентификационного заголовка или кука в запросе)*
 
 Параметры
 ```
 name - название полки
-type - тип полки (work - произведения, edition - издания, film - фильмы)
+type - тип полки (work - произведения, edition - издания, film - фильмы, autor - авторы)
 shared - открытая полка (on) или нет (off)
 comment - текст комментария к книжной полке
 ```
