@@ -19,7 +19,7 @@ user_id - id пользователя
 
 Ответ
 ```
-[
+{"bookcases_list":[
     {
         "bookcase_comment": String|null,            # Комментарий (описание) полки
         "bookcase_group": String,                   # Тип книжной полки из списка (free, sale, buy, read, wait)
@@ -35,7 +35,17 @@ user_id - id пользователя
         "sort": Int                                 # Порядковый номер при сортировке
     },
     ...
+],
+"folder_id":Int,       # id текущего шкафа, 0 для корня
+"folders_list":[       # список шкафов 
+    {
+        "folder_id": Int,  # id шкафа
+        "item_count": Int, # кол-во полок в нём
+        "name": String     # имяшкафа
+    },
+    ...
 ]
+}            
 ```
 
 ## Содержимое книжной полки (подборки)
