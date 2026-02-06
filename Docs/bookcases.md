@@ -348,11 +348,11 @@ AUTH GET /my/bookcases/type/{type}/{item_id}
 Параметры
 ```
 item_id - id item'а
-type - тип полки (work|edition|film)
+type - тип полки (work|edition|film|autor)
 ```
 
 Пример
-> https://api.fantlab.ru/my/bookcases/type/edition/281 - список полок типа "издания" с проверкой наличиия на них edition281
+> https://api.fantlab.ru/my/bookcases/type/edition/281 - список полок типа "издания" с проверкой наличия на них edition281
 
 Ответ (список полок)
 ```
@@ -360,6 +360,8 @@ type - тип полки (work|edition|film)
     {
         "bookcase_id": Int,                         # id книжной полки
         "bookcase_name": String,                    # Название полки
+        "folder_id": Int,                           # Возвращается id книжного шкафа, если полка стоит в нём, для корневых полок без шкафа возвратит 0 
+        "folder_name": String,                      # Название шкафа, если он есть, иначе вернёт null
         "item_added": Int,                          # Возвращается 1, если элемент присутствует на данной полке, и 0, если нет
     },
     ...
