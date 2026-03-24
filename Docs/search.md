@@ -461,6 +461,39 @@ onlymatches - выдавать только содержимое массива 
     ...
 ]
 ```
+## Поиск миров
+
+Запрос
+```
+GET /search-worlds?q={query}&page={page}&onlymatches={0|1}
+```
+
+Параметры
+```
+query - строка поиска. В качестве разделителя используется "+"
+page - номер страницы (необязательный; по-умолчанию 1)
+onlymatches - выдавать только содержимое массива matches (необязательный; по-умолчанию 0)
+```
+
+Пример
+
+> [/search-worlds?q=Арда&page=1&onlymatches=1](https://api.fantlab.ru/search-worlds?q=Арда&page=1&onlymatches=1) - поиск по фразе "Арда"
+
+Ответ (при запросе с параметром **onlymatches=1**)
+```
+[
+    {
+        world_id: Int,        # id мира
+        name: String,         # название
+        description: String,  # описание
+        world_type: String,   # тип мира
+        work_id: Int,         # id связанного с миром ворка
+        work_name: String,    # оригинальное название связанного ворка
+        work_rusname: String # русское название связанного ворка
+    },
+    ...
+]
+```
 
 ## Общий поиск
 
